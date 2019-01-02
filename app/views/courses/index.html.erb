@@ -1,0 +1,5 @@
+<h1>Check out all available courses!</h1>
+
+  <% @courses.each do |course| %>
+  <h3>Title: <%= link_to "#{course[:title]}", course_path(course) %></h3>
+  <% end %>

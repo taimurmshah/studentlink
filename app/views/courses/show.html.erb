@@ -1,0 +1,4 @@
+<h1>Welcome to <%= @course[:title] %></h1>
+<h3>Course Instructor: <%= link_to "#{@course.teacher[:name]}", teacher_path(@course.teacher) %> </h3>
+<h3>Course Description: </h3>
+<p><%="#{@course.description}" %></p>
