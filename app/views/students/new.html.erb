@@ -1,9 +1,8 @@
 <h1>Sign up for Student Link here!</h1>
 
 <%= form_for(@student) do |f| %>
-  Name: <%= f.text_field :name %>
-  Username: <%= f.text_field :username %>
+  <p>Name: <%= f.text_field :name %></p>
+  <p>Username: <%= f.text_field :username %></p>
+  <p>Password: <%= f.text_field :password %></p>
   <%= f.submit %>
-  <% end %>
-
-</form>
+<% end %>

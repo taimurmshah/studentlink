@@ -1,2 +1,15 @@
-<h1>Welcome, <%= "#{@student.name}" %>! </h1>
+<h1><%= "#{@student.name}" %></h1>
+<p>Following: <%= @student.following %> </p>
+<p>Followers: <%= @student.followers %> </p>
+
+
 <%= link_to "View available courses", courses_path %>
+<br>
+<br>
+<%= link_to "View all students", students_path %>
+<br>
+<br>
+You are logged in as <%= current_student.name %>
+<br>
+<br>
+<%= link_to "Logout", logout_path %>
