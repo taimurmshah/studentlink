@@ -1,7 +1,7 @@
-<h1>Here are all your classmates!</h1>
-
-<% @students.each do |student| %>
-<p><%= link_to "#{student.name}", student_path(student) %></p>
+<h1>My Schedule</h1>
+<br>
+<% @student.courses.each do |course|%>
+<p><%= link_to "#{course.title}", course_path(course) %></p>
 <% end %>
 <br>
 <br>

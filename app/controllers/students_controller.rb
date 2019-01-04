@@ -20,10 +20,16 @@ class StudentsController < ApplicationController
 
   def show
     @student = Student.find(params[:id])
+    @me = Student.find(session[:student_id])
+    @follower = @student.follower_students.include?(@me)
   end
 
   def index
     @students = Student.all
+  end
+
+  def courses
+    @student = Student.find(params[:id])
   end
 
   #

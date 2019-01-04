@@ -1,4 +1,5 @@
 class CoursesController < ApplicationController
+  before_action :authentication_required, only: [:index, :show]
 
   def index
     @courses = Course.all
@@ -6,7 +7,9 @@ class CoursesController < ApplicationController
 
   def show
     @course = Course.find(params[:id])
+    @enrolled = current_student.courses.include?(@course)
   end
+
 
 
 

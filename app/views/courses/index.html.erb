@@ -1,5 +1,7 @@
-<h1>Check out all available courses!</h1>
+<h1 class='ui green header'>Check out all available courses!</h1>
 
   <% @courses.each do |course| %>
-  <h3>Title: <%= link_to "#{course[:title]}", course_path(course) %></h3>
+  <h3><%= link_to "#{course[:title]}", course_path(course), class: 'ui button' %></h3>
   <% end %>
+  <p class="home"><%= link_to "Home", "/home" %></p>
+  <p class="footer">You are logged in as <%= current_student.name %></p>

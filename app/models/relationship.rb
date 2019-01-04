@@ -2,6 +2,8 @@ class Relationship < ApplicationRecord
   belongs_to :student
   belongs_to :followed_student, class_name: 'Student'
 
+
+
   # validate :realism
   #
   #  private

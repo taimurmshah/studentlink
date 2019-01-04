@@ -1,0 +1,16 @@
+<h1 class="ui inverted header"><%= @student.name %></h1>
+  <div class="ui compact segments">
+    <div class="ui compact segment">
+      <p><%= link_to "View all courses", courses_path%></p>
+    </div>
+    <div class="ui compact segment">
+      <p><%= link_to "View my Schedule", "students/#{@student.id}/courses" %></p>
+    </div>
+    <div class="ui compact segment">
+      <p><%= link_to "View all students", students_path %></p>
+    </div>
+    <div class="ui compact segment">
+      <p><%= link_to "Logout", logout_path %></p>
+    </div>
+  </div>
+  <p class="footer">You are logged in as <%= current_student.name %></p>

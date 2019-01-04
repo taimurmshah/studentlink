@@ -2,3 +2,11 @@
 <h3>Course Instructor: <%= link_to "#{@course.teacher[:name]}", teacher_path(@course.teacher) %> </h3>
 <h3>Course Description: </h3>
 <p><%="#{@course.description}" %></p>
+<br>
+<% if @enrolled %>
+  <%= button_to "Drop this course?", "/courses/#{@course.id}/drop", method: :delete %>
+<% else %>
+  <%= button_to "Join this course?", "/courses/#{@course.id}/add", method: :post %>
+<% end %>
+<p class="home"><%= link_to "Home", "/home" %></p>
+<p class="footer">You are logged in as <%= current_student.name %></p>

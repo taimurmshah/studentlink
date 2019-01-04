@@ -12,10 +12,10 @@ Teacher.destroy_all
 
 
 students = [
-  {name: "Djavan Guy", username: "Beefdj"},
-  {name: "Leo Folla", username: "Theslikestofall"},
-  {name: "Mahdi Ladjouzi", username: "Frostfire"},
-  {name: "Taimur Shah", username: "donshah"}
+  {name: "Djavan Guy", username: "Beefdj", password: "brazil"},
+  {name: "Leo Folla", username: "Theslikestofall", password: "purpledrank"},
+  {name: "Mahdi Ladjouzi", username: "Frostfire", password: "cheese"},
+  {name: "Taimur Shah", username: "donshah", password: "grapes" }
 ]
 
 students.each do |student|
@@ -40,7 +40,7 @@ courses = [
   {title: "Music Theory", description: "In this course, we will be exploring the fundamentals of music theory",teacher_id: Teacher.all.sample[:id]},
   {title: "Advanced Rhetoric", description: "Here we'll be studying advanced techniques of argumentation.",teacher_id: Teacher.all.sample[:id]},
   {title: "Electromagnetism", description: "We will be surveying Maxwell's equations and other field theory.",teacher_id: Teacher.all.sample[:id]},
-  {title: "How to Mack 101", description: "If you have to ask... you'll never know",teacher_id: Teacher.all.sample[:id]}
+  {title: "How to 101", description: "If you have to ask... you'll never know",teacher_id: Teacher.all.sample[:id]}
 ]
 
 courses.each do |course|

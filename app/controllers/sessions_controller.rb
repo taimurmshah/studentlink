@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
     if student && student.authenticate(params[:password])
       session[:student_id] = student.id
 
-      redirect_to student_path(student)
+      redirect_to '/home'
     else
       render 'sessions/new'
     end

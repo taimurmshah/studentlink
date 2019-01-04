@@ -1,15 +1,32 @@
-<h1><%= "#{@student.name}" %></h1>
-<p>Following: <%= @student.following %> </p>
-<p>Followers: <%= @student.followers %> </p>
+
+<h1><%= "#{@student.name}"%></h1>
+<% if @follower %>
+<p>You follow this user</p>
+<% end %>
+<p>Following: <%= @student.following? %> </p>
+<p>Followers: <%= @student.followers? %> </p>
 
 
-<%= link_to "View available courses", courses_path %>
+  <% if @follower %>
+    <%= button_to "Unfollow #{@student.name}", "/students/#{@student.id}/unfollow", method: :delete, class: 'ui button'%>
+  <% elsif @student == @me%>
+    <h3>You can't follow yourself, douche.</h3>
+  <% else %>
+    <%= button_to "Follow #{@student.name}", "/students/#{@student.id}/follow", method: :post, class: 'ui button'%>
+  <% end %>
+
 <br>
 <br>
 <%= link_to "View all students", students_path %>
 <br>
 <br>
-You are logged in as <%= current_student.name %>
+
 <br>
 <br>
 <%= link_to "Logout", logout_path %>
+<br>
+<br>
+<br>
+<br>
+<p><%= link_to "Home", "/home" %></p>
+<p class="footer">You are logged in as <%= current_student.name %></p>
